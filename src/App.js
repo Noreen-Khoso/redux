@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Login } from "./Components/Login";
+import Profile from "./Components/Profile";
+
+import ContextProvider from "./Context/ContextProvider";
+
+
 
 function App() {
+  const[count,setcount] =useState(0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ContextProvider>
+    <div className=" bg-orange-400 flex flex-col  justify-center items-center h-full ">
+      <h1>Hello This Is My Context API Component </h1>
+      <Profile/>
+      <Login/>
+      
     </div>
+    </ContextProvider>
   );
 }
 
